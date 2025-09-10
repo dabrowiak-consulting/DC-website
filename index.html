@@ -233,6 +233,9 @@
 
     /* Wrap to allow horizontal scroll on mobile */
     #expertise .table-wrap {
+      display: block;
+      max-width: 100%;
+      margin: 0 0 2rem;           /* only bottom spacing */
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       border-radius: 12px;
@@ -344,6 +347,7 @@
       border:none; 
       border-radius:10px; 
       padding:0.8rem 1.6rem; 
+      font-size: 0.95rem;
       font-weight:700; 
       cursor:pointer;
     }
@@ -394,7 +398,7 @@
     <img class="bg" src="ICU.png" alt="" loading="eager">
     <div>
       <h1>From Insight to Adoption</h1>
-      <p>Blending engineering expertise, customer perspective, and business strategy <br> 
+      <p>Blending technical expertise, customer perspective, and business strategy <br> 
         into actionable guidance for the MedTech innovator and investor community</p>
     </div>
   </section>
@@ -448,51 +452,46 @@
       <article class="service-card">
         <img src="product optimization.png" alt="Product Optimization Icon" class="service-icon">
         <h3>Product Optimization</h3>
-        <p>Customer-driven product support to maximize stakeholder satisfaction while minimizing development effort.</p>
-        <ul>
-          <li>Customer research programs delivering actionable insights on clinical processes and preferences</li>
-          <li>Technical concept ideation and implementation guidance</li>
-          <li>Development support including real-time VOC, product definition, and roadmapping</li>
-          <li>Marketing support including positioning, collateral, product aids, and training</li>
-        </ul>
-        <p>Through structured analysis and disciplined VOC methods, Dabrowiak Consulting helps teams avoid wasted cycles and 
-          deliver innovative value. The result is smooth, confident launches which maximize adoption 
-          and competitive advantage.</p>
+        <p>Customer-driven strategies and support to maximize device stakeholder satisfaction.</p>
+        <p>Through structured VOC, ideation, and analysis, Dabrowiak Consulting helps teams avoid wasted 
+          cycles and deliver smooth, confident launches which maximize adoption.</p>
       </article>
       <article class="service-card">
         <img src="tech analysis.png" alt="Technical Analysis Icon" class="service-icon">
         <h3>Technical Analysis</h3>
         <p>Independent opinion and clear communication to support IP development, strategy, or litigation.</p>
+        <!-- 
         <ul>
           <li>Leverage expertise in medical capital equipment, catheters, and other consumables</li>
           <li>Technical patent claim reviews and prior art comparisons and analysis</li>
           <li>Expert reports that explain complex technology in accessible terms</li>
           <li>Insightful, accessible visuals to support courtroom or boardroom presentations</li>
         </ul>
-        <p>Through disciplined analysis and clear presentation, Dabrowiak Consulting strengthens legal teams with the technical 
-          clarity they need to argue persuasively. The goal is not just to dissect the technology, but to make its implications 
-          unmissable.</p>
+        -->
+        <p>Through disciplined analysis and clear presentation, Dabrowiak Consulting strengthens teams with the technical 
+          clarity needed to act decisively.</p>
       </article>
       <article class="service-card">
         <img src="diligence.png" alt="Due Diligence Icon" class="service-icon">
         <h3>Due Diligence</h3>
-        <p>Evidence-based evaluations of technologies and products to support investments or acquisition.</p>
+        <p>Evaluation of technologies and products to support investment or acquisition decisions.</p>
+        <!-- 
         <ul>
           <li>Evaluation of core technical feasibility, performance, and limitations</li>
           <li>Assessment of usability and adoption likelihood based on customer needs and workflows</li>
           <li>Identification of development risks, regulatory considerations, and potential failure modes</li>
           <li>Translation of technical findings into clear implications for investors and deal teams</li>
         </ul>
-        <p>Dabrowiak Consulting combines deep technical intuition and experience with a customer and market perspective, 
-          offering clear and unique insights into whether a technology can deliver on its claims and gain real-world adoption.</p>
+        -->
+        <p>Dabrowiak Consulting combines deep technical experience with a customer and market perspective, offering 
+          clear insights into whether a technology can deliver on its claims and gain adoption.</p>
       </article>
     </div>
   </section>
 
   <!-- Expertise -->
-  <section id="expertise" class="wrap">
-    <div class="container">
-      <h2 class="section-title">Expertise</h2>
+  <section class="wrap" id="expertise" aria-label="Expertise">
+    <h2 class="section-title">Expertise</h2>
 
       <!-- PRODUCT -->
       <h3 class="subsection-title">Product</h3>
@@ -500,14 +499,14 @@
         <table class="exp-table" aria-label="Product expertise table">
           <tbody>
             <tr>
-              <th class="group" rowspan="3">Market &amp; User Research</th>
+              <th class="group" rowspan="3">Customer Research</th>
               <td>KOL interviews</td>
             </tr>
             <tr><td>User focus groups</td></tr>
             <tr><td>Clinical process maps (journey, decision, value stream)</td></tr>
             
             <tr>
-              <th class="group" rowspan="3">Structured Ideation</th>
+              <th class="group" rowspan="3">Concept Generation</th>
               <td>Iterative brainstorming & concept modeling</td>
             </tr>
             <tr><td>Prioritization matrix (effort, impact)</td></tr>
@@ -546,42 +545,32 @@
               <th class="group" rowspan="2">Systems</th>
               <td>Architecture, layout</td>
             </tr>
-            <tr><td>Algorithms (measurement, control)</td></tr>
+            <tr><td>Algorithms - measurement, control</td></tr>
 
             <tr>
               <th class="group" rowspan="2">Sterile Consumables</th>
-              <td>Catheters, including hub overmolding</td>
+              <td>Catheters, hub overmolding</td>
             </tr>
-            <tr><td>Cartridges & tubing sets</td></tr>
+            <tr><td>Cartridges, tubing sets</td></tr>
 
             <tr>
-              <th class="group" rowspan="2">Fluids</th>
-              <td>Blood, saline, supersaturated fluids</td>
+              <th class="group" rowspan="3">Fluids</th>
+              <td>Blood, saline, slurries, supersaturation</td>
             </tr>
-            <tr><td>Particulate slurries, microchannels</td></tr>
-
-            <tr>
-              <th class="group" rowspan="2">Flow Control</th>
-              <td>Valves, traps (air, liquid)</td>
+            <tr><td>Valves, traps, dampening, vents</td></tr>
+            <tr><td>Pumps - roller, gear, vane, centrifugal, gravity, vacuum</td></tr>
             </tr>
-            <tr><td>Pulse dampening, hydrophobic vents</td></tr>
-
-            <tr>
-              <th class="group" rowspan="2">Pumps</th>
-              <td>Roller, gear, vane, centrifugal, turbine regenerative</td>
-            </tr>
-            <tr><td>Gravity, vacuum</td></tr>
 
             <tr>
               <th class="group" rowspan="2">Heating & Cooling</th>
-              <td>System, evaporator and heat exchanger design</td>
+              <td>System, heat exchanger, and evaporator design</td>
             </tr>
-            <tr><td>Thermoelectrics, desiccation-evaporation, endothermic materials</td></tr>
+            <tr><td>Thermoelectrics, desiccation-evaporation, endothermic mtls.</td></tr>
+
             <tr>
-              <th class="group" rowspan="2">Sensing</th>
-              <td>Pressure, temperature</td>
+              <th class="group" rowspan="1">Sensors</th>
+              <td>Pressure, temperature, flow, bubble, level</td>
             </tr>
-            <tr><td>Flow, bubble, level</td></tr>
 
           </tbody>
         </table>
@@ -589,15 +578,15 @@
     </div>
   </section>
 
-
   <!-- Contact -->
   <section class="wrap" id="contact" aria-label="Contact">
     <div class="two-col">
       <div>
         <h2>Contact</h2>
-        <p>Interested in learning more?</p>
+        <p>Every success story begins with a conversation. Reach out to explore 
+          how we can turn complexity into clarity — and ideas into impact.</p>
         <div class="contact-box">
-          <button class="btn" id="reveal">Get in touch</button>
+          <button class="btn" id="reveal">Let's talk</button>
           <div class="muted" id="email-note"></div>
         </div>
       </div>
@@ -624,7 +613,7 @@
       const addr = parts.join('');
       note.innerHTML = '<a href="mailto:'+addr+'">'+addr+'</a>';
       btn.setAttribute('disabled','true');
-      btn.textContent = 'See info below';
+      btn.textContent = 'Email below';
     });
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
