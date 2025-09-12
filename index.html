@@ -179,6 +179,7 @@
     #about .card img {
       max-width: 100%;       /* image stays within the card */
       height: auto;
+      filter: hue-rotate(0deg) brightness(1.05) saturate(1);
     }
     @media (max-width: 899px) {
       #about .two-col {
@@ -186,7 +187,7 @@
       }
     }
 
-    /* service-cards grid: 1 column → 3 columns (never 2) */
+    /* service-cards grid */
     .service-cards {
       display: grid;
       gap: 24px;
@@ -194,7 +195,7 @@
     }
     @media (min-width: 1024px) {
       .service-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));  /* space permitting, add colunns */
       }
     }
     .service-card {
@@ -254,7 +255,7 @@
 
     /* Banded rows */
     #expertise .exp-table tbody tr:nth-child(even) td {
-      background: var(--row-alt, #fafafa);
+      background: var(--row-alt, #fff8f3);
     }
 
     /* Cell padding & borders */
@@ -283,7 +284,7 @@
       position: absolute;
       inset: 0 auto 0 0;
       width: 4px;
-      background: var(--accent, #6e0046); /* adjust to your brand wine color */
+      background: var(--accent, #ff7300);
       border-top-left-radius: 12px;
       border-bottom-left-radius: 12px;
     }
@@ -301,20 +302,10 @@
       border-bottom-right-radius: 12px;
     }
 
-    /* Dark mode (if you use CSS variables already, these will be overridden) */
-    @media (prefers-color-scheme: dark) {
-      #expertise .table-wrap { background: #121212; box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset; }
-      #expertise .exp-table td,
-      #expertise .exp-table th.group { border-bottom-color: rgba(255,255,255,0.12); }
-      #expertise .exp-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.04); }
-      #expertise .exp-table th.group { color: #eee; background: linear-gradient(90deg, rgba(255,255,255,0.04), transparent 60%); }
-      #expertise .exp-table th.group::before { background: var(--accent, #ab79a1); } /* your dusky pink if desired */
-    }
-
-    /* Tighter layout on very small screens */
+    /* Tighter layout on very small screens 
     @media (max-width: 480px) {
       #expertise .exp-table { font-size: 0.9rem; }
-    }
+    }*/
     
     /* ----- Contact ----- */
     .contact-box{ 
@@ -385,9 +376,9 @@
     <div class="nav-inner">
       <div class="brand">DABROWIAK CONSULTING</div>
       <nav>
-        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#expertise">Expertise</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -408,39 +399,16 @@
     <div class="two-col">
       <div>
         <h2>Medical Device Success</h2>
-        <p>In MedTech, the difference between a promising device and a successful one is whether it's adopted in <xx>
-          real-world</strong> clinical practice. Achieving adoption isn’t about solving one challenge in isolation. It’s about 
-          fitting together interconnected pieces—each with its own demands and priorities.</p>
-        <p>Every device must solve for both the <strong>stakeholders</strong> who decide its fate—regulators, adopters, 
-          payers, and administrators—and the <strong>evidence</strong> they require: safety, efficacy, value, and outcomes.</p>
-        <p>This complexity is where opportunity lies. Successful MedDev adoption requires cleverly solving for an 
-          array of technical and customer limitations. </p>
-        <p>With a unique blend of commercial and technical skills, Dabrowiak Consulting can help bring the pieces together.</p>
+        <p>The difference between a promising device and a successful device is whether it's adopted in
+          real-world clinical practice.</p>
+        <p>To gain adoption, a device must solve for both the <strong>stakeholders</strong> who decide its fate—regulators, adopters, 
+          administrators, and payers—and the <strong>evidence</strong> they require: safety, efficacy, value, and outcomes.</p>
+        <p>Fortunately, complexity is where opportunity lies. </p>
+        <p>With a unique blend of commercial skills and technical experience, Dabrowiak Consulting can help bring the puzzle pieces 
+          together.</p>
       </div>
       <div>
         <img src="PO formula.png" alt="Puzzle pieces for medical device success."/>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="wrap" id="about" aria-label="About">
-    <div class="two-col">
-      <div>
-        <h2>About</h2>
-        <p>Jeremy Dabrowiak most recently served as Director of Marketing at ZOLL Medical, following Director-level roles 
-          in Innovation and Research, Design Research, and Product Engineering.</p>
-        <p>In 21 years of startup and corporate 
-          medical device roles, he has driven multiple products from concept to commercial launch while co-authoring 38 patents.
-          Prior to medical devices, he worked for 5 years in biotechnology instrumentation, contributing to early work in 
-          Next-Generation Sequencing.</p>
-        <p>Jeremy has completed executive courses in innovation, continuous improvement, and engineering management at 
-          MIT Sloan and the University of Michigan. He holds degrees in Mechanical Engineering from Michigan Technological 
-          University (B.S. Summa Cum Laude) and Stanford University (M.S.).</p>
-      </div>
-
-      <div class="card">
-        <img src="jdabrowiak-grey.png" alt="Headshot" loading="lazy">
       </div>
     </div>
   </section>
@@ -451,41 +419,37 @@
     <div class="service-cards">
       <article class="service-card">
         <img src="product optimization.png" alt="Product Optimization Icon" class="service-icon">
-        <h3>Product Optimization</h3>
-        <p>Customer-driven strategies and support to maximize device stakeholder satisfaction.</p>
-        <p>Through structured VOC, ideation, and analysis, Dabrowiak Consulting helps teams avoid wasted 
-          cycles and deliver smooth, confident launches which maximize adoption.</p>
+        <h3>Product Strategy & Support</h3>
+        <p>Dabrowiak Consulting systematically gathers stakeholder input and translates it into optimal
+          design priorities, development opportunities, and commercialization plans. </p>
+        <p>This maximizes alignment with stakeholder needs, resulting in greater 
+          productivity, smoother launches, and faster adoption.</p>
       </article>
       <article class="service-card">
         <img src="tech analysis.png" alt="Technical Analysis Icon" class="service-icon">
-        <h3>Technical Analysis</h3>
-        <p>Independent opinion and clear communication to support IP development, strategy, or litigation.</p>
-        <!-- 
-        <ul>
-          <li>Leverage expertise in medical capital equipment, catheters, and other consumables</li>
-          <li>Technical patent claim reviews and prior art comparisons and analysis</li>
-          <li>Expert reports that explain complex technology in accessible terms</li>
-          <li>Insightful, accessible visuals to support courtroom or boardroom presentations</li>
-        </ul>
-        -->
-        <p>Through disciplined analysis and clear presentation, Dabrowiak Consulting strengthens teams with the technical 
-          clarity needed to act decisively.</p>
-      </article>
+        <h3>Independent Technical Assessment</h3>
+        <p>Dabrowiak Consulting provides unbiased evaluation of technologies and claims to support strategic, intellectual 
+          property, or investment decisions. </p>
+        <p>Technical clarity combined with market sensibility delivers the confidence needed to act decisively 
+          in high-stakes contexts.</p>
+        </article>
+      <!-- 
       <article class="service-card">
         <img src="diligence.png" alt="Due Diligence Icon" class="service-icon">
         <h3>Due Diligence</h3>
         <p>Evaluation of technologies and products to support investment or acquisition decisions.</p>
-        <!-- 
+        
         <ul>
           <li>Evaluation of core technical feasibility, performance, and limitations</li>
           <li>Assessment of usability and adoption likelihood based on customer needs and workflows</li>
           <li>Identification of development risks, regulatory considerations, and potential failure modes</li>
           <li>Translation of technical findings into clear implications for investors and deal teams</li>
         </ul>
-        -->
+        
         <p>Dabrowiak Consulting combines deep technical experience with a customer and market perspective, offering 
           clear insights into whether a technology can deliver on its claims and gain adoption.</p>
       </article>
+      -->
     </div>
   </section>
 
@@ -499,10 +463,9 @@
         <table class="exp-table" aria-label="Product expertise table">
           <tbody>
             <tr>
-              <th class="group" rowspan="3">Customer Research</th>
-              <td>KOL interviews</td>
+              <th class="group" rowspan="2">Customer Research</th>
+              <td>KOL interviews, user focus groups</td>
             </tr>
-            <tr><td>User focus groups</td></tr>
             <tr><td>Clinical process maps (journey, decision, value stream)</td></tr>
             
             <tr>
@@ -514,7 +477,7 @@
             
             <tr>
               <th class="group" rowspan="3">Product Strategy</th>
-              <td>Product Roadmap</td>
+              <td>Product roadmaps</td>
             </tr>
             <tr><td>Financial models (NPV, ROI)</td></tr>
             <tr><td>Product / Marketing Requirements</td></tr>
@@ -530,7 +493,7 @@
               <th class="group" rowspan="3">Commercial Support</th>
               <td>Positioning, Collateral</td>
             </tr>
-            <tr><td>Product aids</td></tr>
+            <tr><td>Product aids (guides, videos)</td></tr>
             <tr><td>Sales training & initial customer visits</td></tr>
           </tbody>
         </table>
@@ -574,6 +537,29 @@
 
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="wrap" id="about" aria-label="About">
+    <div class="two-col">
+      <div>
+        <h2>About</h2>
+        <p>Jeremy Dabrowiak most recently served as Director of Marketing at ZOLL Medical.  Prior to that, he served the company
+          in Director-level roles in Innovation and Research, Design Research, and Product Engineering.</p>
+        <p>In 21 years of startup and corporate 
+          medical device roles, he has driven multiple products from concept to commercial launch while co-authoring 38 patents.
+          Prior to medical devices, he worked for 5 years in biotechnology instrumentation, contributing to early work in 
+          Next-Generation Sequencing.</p>
+        <p>Jeremy has completed executive courses in innovation, continuous improvement, and engineering management at 
+          MIT Sloan and the University of Michigan. He holds degrees in Mechanical Engineering from Michigan Technological 
+          University (B.S. Summa Cum Laude) and Stanford University (M.S.).</p>
+        <p>His 1999 Master's degree project was a Parallel Parking Assistive System for Toyota.</p>
+      </div>
+
+      <div class="card">
+        <img src="jdabrowiak-grey.png" alt="Headshot" loading="lazy">
       </div>
     </div>
   </section>
