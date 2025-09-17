@@ -4,6 +4,8 @@
 --card:#ffffff; --band:#f9faff;
 --brand:#ff7300; --brand-2:#ff841f;
 --maxw:1100px;
+--card-w: 480px;
+--card-gap: 36px;
 }
 *{ box-sizing:border-box }
 html{
@@ -138,7 +140,7 @@ margin:.45rem 0
 }
 
 #puzzle img {
-max-width: 450px;
+max-width: 480px;
 height: auto;
 display: block;
 }
@@ -168,40 +170,53 @@ grid-template-columns: 1fr; /* single column */
 }
 }
 
-/* service-cards grid */
+/* Services Grid: two fixed-width tracks that shrink-wrap to their total width */
 .service-cards {
-display: grid;
-gap: 24px;
-grid-template-columns: 1fr; /* default: single column */
+  display: grid;
+  gap: var(--card-gap);
+  grid-template-columns: repeat(2, minmax(0, var(--card-w)));
+  width: min(100%, calc(2 * var(--card-w) + var(--card-gap)));
+  justify-content: start;   /* hug the left edge */
+  margin: 0;
 }
-@media (min-width: 1024px) {
-.service-cards {
-grid-template-columns: repeat(2, minmax(0, 1fr));  /* space permitting, add colunns */
+
+/* One column when the viewport can’t fit two cards + gap */
+@media (max-width: 920px) {
+  .service-cards {
+    grid-template-columns: minmax(0, var(--card-w));
+    width: min(100%, var(--card-w));
+  }
 }
-}
+
 .service-card {
-background: var(--card, #ffffff);
-border: 1px solid rgba(148,163,184,.25);
-border-radius: 12px;
-margin: 0.25rem 0 0.5rem;
-padding: 1rem 1.25rem;
-display: flex;
-flex-direction: column;
+  width: 100%;  /* fill the grid track so the background shows */
+  box-sizing: border-box;
+  background: var(--card, #fff);
+  border: 1px solid rgba(148,163,184,.25);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center children horizontally */
+  text-align: center;   /* center text */
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05) inset, 0 6px 20px rgba(0,0,0,0.06);
+
 }
+
+/* Icon inside card */
 .service-card img.service-icon {
-width: 158px;
-height: 140px;
-margin-bottom: 1rem;      /* space between icon and heading */
-display: block;
-margin-left: 0;
-margin-right: auto;
-filter: hue-rotate(-2deg) brightness(0.85) saturate(2);
+  max-width: auto;
+  height: 180px;
+  margin: 0 0 1rem 0;
+  display: block;
+  filter: hue-rotate(-2deg) brightness(0.85) saturate(2);
 }
 
 /* ----- Expertise ----- */
 #expertise {
-    padding-top: 64px;
-    padding-bottom: 0px;
+padding-top: 64px;
+padding-bottom: 0px;
 }
 
 #expertise .subsection-title {
