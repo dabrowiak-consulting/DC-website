@@ -19,354 +19,8 @@
   and business strategy to drive MedTech adoption. Services include product management / optimization, technical 
   analysis for IP strategy and litigation, and due diligence for strategic, venture capital, or private equity investors." />
   <meta name="theme-color" content="#0b1220" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1220; --ink:#0f172a; --ink-2:#2d94ae; --ink-3:#015A70;
-      --fg:#0f172a; --fg-2:#334155; --fg-3:#475569;
-      --card:#ffffff; --band:#f9faff;
-      --brand:#ff7300; --brand-2:#ff841f;
-      --maxw:1100px;
-    }
-    /* @media (prefers-color-scheme: dark){
-      :root{ --bg:#0b1220; --ink:#e5e7eb; --ink-2:#cbd5e1; --ink-3:#94a3b8; --card:#111827; --band:#0e1526; }
-    } */
-    *{ box-sizing:border-box }
-    html,body{ height:100% }
-    body{ 
-      margin:0; 
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
-      color:var(--ink); 
-      background:var(--band); 
-    }
-    a{ 
-      color:inherit; 
-      text-decoration:none 
-    }
-    img{ 
-      max-width:100%; 
-      height:auto; 
-      display:block 
-    }
-    p { line-height: 1.4; }
-    ul { line-height: 1.4; }
-    h1, h2, h3 { line-height: 1.1; }
-    
-    /* ----- Header / Nav ----- */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      background:#e3eff6;
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(148,163,184,.25);
-    }
-    .nav-inner{ 
-      max-width:var(--maxw); 
-      margin:0 auto; 
-      display:flex; 
-      align-items:center; 
-      justify-content:space-between; 
-      padding:.9rem 1rem; 
-    }
-    .brand{ 
-      font-weight:800; 
-      letter-spacing:.2px 
-    }
-    .nav a{ 
-      margin-left:1rem; 
-      color:var(--ink-3); 
-      font-weight:600 
-    }
-    .nav a:hover{ 
-      color:var(--ink-2) 
-    }
-    
-    /* ----- Hero ----- */
-    .hero{
-      position: relative;
-      min-height: 66vh;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      text-align: center;
-      background: #0b1220;
-    }
-    .hero img.bg{
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: right top;
-      opacity: 1;
-      filter: hue-rotate(7deg) brightness(1.1) saturate(1.2);
-      z-index: 0;
-    }
-    .hero > :not(img.bg){
-      position: relative;
-      z-index: 1;
-    }
-    .hero::after{
-      content: none;
-    }
-    .hero h1{ 
-      font-size:clamp(2rem, 5vw, 4rem); 
-      margin:.2rem 0 
-    }
-    .hero p{ 
-      font-size:clamp(1rem, 2.2vw, 1.25rem); 
-      opacity:.95; 
-      margin:0 1rem 1.2rem 
-    }
+  <link rel="stylesheet" href="styles.css" />
 
-    /* ----- Sections ----- */
-    .wrap{ 
-      max-width:var(--maxw); 
-      margin:0 auto; 
-      padding:3.5rem 1rem; 
-    }
-    .two-col{ 
-      display:grid; 
-      grid-template-columns:1fr; 
-      gap:1.5rem 
-    }
-    @media (min-width:900px){
-      .two-col{ grid-template-columns:1.05fr .95fr }
-    }
-    h2{ 
-      font-size:clamp(1.4rem, 2.6vw, 2rem); 
-      margin:.25rem 0 1rem 
-    }
-    p.lead{ 
-      font-size:1.1rem; 
-      color:var(--fg-3) 
-    }
-    .card{
-      background:var(--card); 
-      border:1px solid rgba(148,163,184,.25); 
-      border-radius:16px; 
-      padding:1.25rem;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
-    }
-    ul.clean{ 
-      padding-left:1.1rem; 
-      margin:.5rem 0 
-    }
-    ul.clean li{ 
-      margin:.45rem 0 
-    }
-
-    #puzzle img {
-      max-width: 300;
-      height: auto;
-      display: block;
-    }
-    /* ----- About ----- */
-    #about .two-col {
-      display: grid;
-      grid-template-columns: 1fr auto; /* text grows, image column shrinks to fit */
-      gap: 2rem;                       /* adjust spacing between text and image */
-      align-items: start;
-    }
-    #about .card {
-      max-width: 350px;        /* limit card width */
-      margin: 1rem auto 0;     /* center under text with top margin */
-      padding: 1rem;           /* even padding around the image */
-      display: flex;           /* center image inside */
-      justify-content: center;
-      align-items: center;
-    }
-    #about .card img {
-      max-width: 100%;       /* image stays within the card */
-      height: auto;
-      filter: hue-rotate(0deg) brightness(1.05) saturate(1);
-    }
-    @media (max-width: 899px) {
-      #about .two-col {
-        grid-template-columns: 1fr; /* single column */
-      }
-    }
-
-    /* service-cards grid */
-    .service-cards {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1fr; /* default: single column */
-    }
-    @media (min-width: 1024px) {
-      .service-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));  /* space permitting, add colunns */
-      }
-    }
-    .service-card {
-      background: var(--card, #ffffff);
-      border: 1px solid rgba(148,163,184,.25);
-      border-radius: 12px;
-      margin: 0.25rem 0 0.5rem;
-      padding: 1rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .service-card img.service-icon {
-      width: 158px;
-      height: 140px;
-      margin-bottom: 1rem;      /* space between icon and heading */
-      display: block;
-      margin-left: 0;
-      margin-right: auto;
-      filter: hue-rotate(-2deg) brightness(0.85) saturate(2);
-    }
-
-    /* ----- Expertise ----- */
-    #expertise {
-      padding: 64px 0;
-    }
-
-    #expertise .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    #expertise .subsection-title {
-      font-size: 1.25rem;
-      margin: 2rem 0 0.75rem;
-    }
-
-    /* Wrap to allow horizontal scroll on mobile */
-    #expertise .table-wrap {
-      display: block;
-      max-width: 100%;
-      margin: 0 0 2rem;           /* only bottom spacing */
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 12px;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.05) inset, 0 6px 20px rgba(0,0,0,0.06);
-      background: var(--card-bg, #fff);
-    }
-
-    /* Table baseline */
-    #expertise .exp-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      min-width: 640px; /* keep structure on small screens */
-      font-size: 0.95rem;
-    }
-
-    /* Banded rows */
-    #expertise .exp-table tbody tr:nth-child(even) td {
-      background: var(--row-alt, #fff8f3);
-    }
-
-    /* Cell padding & borders */
-    #expertise .exp-table td,
-    #expertise .exp-table th.group {
-      padding: 12px 16px;
-      vertical-align: top;
-      border-bottom: 1px solid var(--hairline, #e6e6e6);
-    }
-
-    /* Left “group” column styling */
-    #expertise .exp-table th.group {
-      width: 30%;
-      text-align: left;
-      font-weight: 600;
-      color: var(--ink-600, #333);
-      background:
-        linear-gradient(90deg, var(--accent-50, #f8f1f5), transparent 60%)
-        , var(--group-bg, #fcfcfc);
-      position: relative;
-    }
-
-    /* Accent bar on the far left of group cells */
-    #expertise .exp-table th.group::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: var(--accent, #ff7300);
-      border-top-left-radius: 12px;
-      border-bottom-left-radius: 12px;
-    }
-
-    /* Round top/bottom corners of the table container */
-    #expertise .exp-table tbody tr:first-child th.group,
-    #expertise .exp-table tbody tr:first-child td {
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
-
-    #expertise .exp-table tbody tr:last-child th.group,
-    #expertise .exp-table tbody tr:last-child td {
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-    }
-
-    /* Tighter layout on very small screens 
-    @media (max-width: 480px) {
-      #expertise .exp-table { font-size: 0.9rem; }
-    }*/
-    
-    /* ----- Contact ----- */
-    .contact-box{ 
-      display:flex; 
-      flex-direction:column; 
-      gap:.6rem; 
-      align-items: flex-start; 
-    }
-    .contact-figure {
-      text-align: center;     /* centers both image and caption */
-      margin: 0;              /* remove default figure margins */
-    }
-    .contact-img{
-      max-width: 300px;
-      height: auto;       /* preserve aspect ratio */
-      width: auto;
-      display: inline-block;
-      margin: 0 auto 0;  /* optional: center it with spacing */
-    }
-    .contact-caption {
-      font-size: 0.9rem;      /* slightly smaller than body text */
-      color: #555;            /* softer color for caption */
-      margin-top: 0.5rem;     /* space between image and caption */
-    }
-    .btn{
-      display: inline-block; 
-      width: auto; 
-      background:var(--brand); 
-      color:#fff; 
-      border:none; 
-      border-radius:10px; 
-      padding:0.8rem 1.6rem; 
-      font-size: 0.95rem;
-      font-weight:700; 
-      cursor:pointer;
-    }
-    .btn:hover{ 
-      background:var(--brand-2) 
-    }
-    .muted{ 
-      color:var(--fg-3); 
-      font-size:.95rem 
-    }
-
-    /* ----- Footer ----- */
-    footer{
-      background: linear-gradient(90deg, #003F4E, #015D73);
-      color:#cbd5e1; 
-      padding:2rem 1rem; 
-      margin-top:2rem;
-    }
-    .foot-inner{ 
-      max-width:var(--maxw); 
-      margin:0 auto; 
-      display:flex; 
-      flex-wrap:wrap; 
-      gap:1rem; 
-      align-items:center; 
-      justify-content:space-between 
-    }
-  </style>
 </head>
 
 <!--BODY---------------------------------------------------------------------->
@@ -374,16 +28,16 @@
   <!-- Nav -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="brand">DABROWIAK CONSULTING</div>
+      <div class="brand"><a href="index.html">DABROWIAK CONSULTING</a></div>
       <nav>
-        <a href="#services">Services</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#expertise">Expertise</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
-
+  
   <!-- Hero -->
   <section class="hero" id="home" aria-label="Hero">
     <img class="bg" src="ICU.png" alt="" loading="eager">
@@ -403,7 +57,7 @@
           real-world clinical practice.</p>
         <p>To gain adoption, a device must solve for both the <strong>stakeholders</strong> who decide its fate—regulators, adopters, 
           administrators, and payers—and the <strong>evidence</strong> they require: safety, efficacy, value, and outcomes.</p>
-        <p>Fortunately, complexity is where opportunity lies. </p>
+        <p>Fortunately, this complexity is where opportunity lies. </p>
         <p>With a unique blend of commercial skills and technical experience, Dabrowiak Consulting can help bring the puzzle pieces 
           together.</p>
       </div>
@@ -420,36 +74,16 @@
       <article class="service-card">
         <img src="product optimization.png" alt="Product Optimization Icon" class="service-icon">
         <h3>Product Strategy & Support</h3>
-        <p>Dabrowiak Consulting systematically gathers stakeholder input and translates it into optimal
-          design priorities, development opportunities, and commercialization plans. </p>
-        <p>This maximizes alignment with stakeholder needs, resulting in greater 
-          productivity, smoother launches, and faster adoption.</p>
+        <p>Systematic alignment of product decisions with stakeholder needs to maximize project ROI and accelerate adoption</p>
+        <!-- <a class="btn" href="product-strategy.html">Learn more</a> -->
       </article>
       <article class="service-card">
         <img src="tech analysis.png" alt="Technical Analysis Icon" class="service-icon">
         <h3>Independent Technical Assessment</h3>
-        <p>Dabrowiak Consulting provides unbiased evaluation of technologies and claims to support strategic, intellectual 
-          property, or investment decisions. </p>
-        <p>Technical clarity combined with market sensibility delivers the confidence needed to act decisively 
-          in high-stakes contexts.</p>
+        <p>Unbiased evaluation of technologies and claims for strategic, intellectual 
+          property, and investment decisions </p>
+        <!-- <a class="btn" href="technical-assessment.html">Learn more</a> -->
         </article>
-      <!-- 
-      <article class="service-card">
-        <img src="diligence.png" alt="Due Diligence Icon" class="service-icon">
-        <h3>Due Diligence</h3>
-        <p>Evaluation of technologies and products to support investment or acquisition decisions.</p>
-        
-        <ul>
-          <li>Evaluation of core technical feasibility, performance, and limitations</li>
-          <li>Assessment of usability and adoption likelihood based on customer needs and workflows</li>
-          <li>Identification of development risks, regulatory considerations, and potential failure modes</li>
-          <li>Translation of technical findings into clear implications for investors and deal teams</li>
-        </ul>
-        
-        <p>Dabrowiak Consulting combines deep technical experience with a customer and market perspective, offering 
-          clear insights into whether a technology can deliver on its claims and gain adoption.</p>
-      </article>
-      -->
     </div>
   </section>
 
@@ -552,9 +186,10 @@
           commercial launch while co-authoring 38 patents.  Prior to medical devices, he worked for 5 years in biotechnology 
           instrumentation, contributing to early work in Next-Generation Sequencing for Lynx Therapeutics (now Illumina).</p>
         <p>Jeremy has completed executive courses in innovation, continuous improvement, and engineering management at 
-          MIT Sloan and the University of Michigan. He holds degrees in Mechanical Engineering from Michigan Technological 
-          University (B.S. Summa Cum Laude) and Stanford University (M.S.).</p>
-        <p>His 1999 Master's degree project was a Parallel Parking Assistive System for Toyota.</p>
+          MIT Sloan and the University of Michigan.</p>
+        <p>He holds degrees in Mechanical Engineering from Michigan Technological 
+          University (B.S. Summa Cum Laude) and Stanford University (M.S.).  His 1999 Master's degree project was a 
+          Parallel Parking Assistive System for Toyota.</p>
       </div>
 
       <div class="card">
@@ -568,7 +203,7 @@
     <div class="two-col">
       <div>
         <h2>Contact</h2>
-        <p>Every success story begins with a conversation. Reach out to explore 
+        <p>Every success begins with a conversation. Reach out to explore 
           how we can turn complexity into clarity — and ideas into impact.</p>
         <div class="contact-box">
           <button class="btn" id="reveal">Let's talk</button>
@@ -590,7 +225,7 @@
   </footer>
 
   <script>
-    // Email reveal (simple obfuscation)
+    // Reveal
     const parts = ["inquiries","@","dabrowiak",".","com"];
     const btn = document.getElementById('reveal');
     const note = document.getElementById('email-note');
